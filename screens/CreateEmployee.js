@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Button, StyleSheet,View, Modal } from "react-native";
-import { TextInput } from "react-native-paper";
+import { StyleSheet,View, Modal } from "react-native";
+import { TextInput , Button} from "react-native-paper";
 
 const CreateEmployee = () => {
   const [name, setName] = useState("");
@@ -51,6 +51,7 @@ const CreateEmployee = () => {
       <Button icon="content-save" mode="contained" theme={theme} onPress={() => console.log("saved")}>
         Save
       </Button>
+
       <Modal
         animationType="slide"
         transparent={true}
