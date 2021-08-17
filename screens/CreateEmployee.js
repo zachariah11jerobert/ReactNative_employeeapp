@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { StyleSheet,View, Modal } from "react-native";
-import { TextInput , Button} from "react-native-paper";
+import { StyleSheet, View, Modal } from "react-native";
+import { TextInput, Button } from "react-native-paper";
 
 const CreateEmployee = () => {
   const [name, setName] = useState("");
@@ -45,10 +45,22 @@ const CreateEmployee = () => {
         mode="outlined"
         onChangeText={(text) => setSalary(text)}
       />
-      <Button icon="upload" mode="contained" theme={theme} onPress={() => setModal(true)}>
+      <Button
+        icon="upload"
+        style={styles.inputStyle}
+        mode="contained"
+        theme={theme}
+        onPress={() => setModal(true)}
+      >
         Upload Image
       </Button>
-      <Button icon="content-save" mode="contained" theme={theme} onPress={() => console.log("saved")}>
+      <Button
+        icon="content-save"
+        style={styles.inputStyle}
+        mode="contained"
+        theme={theme}
+        onPress={() => console.log("saved")}
+      >
         Save
       </Button>
 
@@ -73,16 +85,12 @@ const CreateEmployee = () => {
             <Button
               icon="image-area"
               mode="contained"
-              theme={theme}
               onPress={() => console.log("presses")}
             >
               Gallery
             </Button>
           </View>
-          <Button
-          theme={theme}
-            onPress={() => setModal(false)}
-          >
+          <Button theme={theme} onPress={() => setModal(false)}>
             Cancel
           </Button>
         </View>
@@ -113,6 +121,7 @@ const styles = StyleSheet.create({
   modalButtonView: {
     flexDirection: "row",
     justifyContent: "space-around",
+    padding: 10,
   },
 });
 
