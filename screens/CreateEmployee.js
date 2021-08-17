@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheetProperties, text, View } from "react-native";
+import { Button, StyleSheetProperties, text, View, Modal } from "react-native";
 import { TextInput } from "react-native-paper";
 
 const CreateEmployee = () => {
@@ -45,6 +45,47 @@ const CreateEmployee = () => {
         mode="outlined"
         onChangeText={(text) => setSalary(text)}
       />
+      <Button icon="upload" mode="contained" theme={theme} onPress={() => setModal(true)}>
+        Upload Image
+      </Button>
+      <Button icon="content-save" mode="contained" theme={theme} onPress={() => console.log("saved")}>
+        Save
+      </Button>
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modal}
+        onRequestClose={() => {
+          setModal(false);
+        }}
+      >
+        <View style={styles.modalView}>
+          <View style={styles.modalButtonView}>
+            <Button
+              icon="camera"
+              theme={theme}
+              mode="contained"
+              onPress={() => console.log("presses")}
+            >
+              Camera
+            </Button>
+            <Button
+              icon="image-area"
+              mode="contained"
+              theme={theme}
+              onPress={() => console.log("presses")}
+            >
+              Gallery
+            </Button>
+          </View>
+          <Button
+          theme={theme}
+            onPress={() => setModal(false)}
+          >
+            Cancel
+          </Button>
+        </View>
+      </Modal>
     </View>
   );
 };
@@ -61,6 +102,16 @@ const styles = StyleSheet.CreateEmployee({
   },
   inputStyle: {
     margin: 5,
+  },
+  modalView: {
+    position: "absolute",
+    bottom: 2,
+    width: "100%",
+    backgroundColor: "white",
+  },
+  modalButtonView: {
+    flexDirection: "row",
+    justifyContent: "space-around",
   },
 });
 
