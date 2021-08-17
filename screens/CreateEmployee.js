@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, StyleSheetProperties, text, View, Modal } from "react-native";
+import { Button, StyleSheet,View, Modal } from "react-native";
 import { TextInput } from "react-native-paper";
 
 const CreateEmployee = () => {
@@ -96,7 +96,7 @@ const theme = {
   },
 };
 
-const styles = StyleSheet.CreateEmployee({
+const styles = StyleSheet.create({
   root: {
     flex: 1,
   },
